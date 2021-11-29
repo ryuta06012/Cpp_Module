@@ -1,15 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 19:02:11 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/11/29 19:02:23 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "Zombie.hpp"
 
-Zombie *Zombie::newZombie(std::string name)
+Zombie *newZombie(std::string name)
 {
-	Zombie *newZombie;
+	Zombie *nz;
 
-	newZombie = new (std::nothrow)Zombie;
-	if (newZombie == NULL)
+	nz = new (std::nothrow)Zombie(name);
+	if (nz == NULL)
 	{
 		std::cerr << "failed!!" << std::endl;
 		std::exit(EXIT_FAILURE);
 	}
-	newZombie->_ZombieName = name;
-	return (newZombie);
+	return (nz);
 }

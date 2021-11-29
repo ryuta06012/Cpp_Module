@@ -1,16 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 19:02:15 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/11/29 19:02:22 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Zombie.hpp"
 
 void	randomChump(std::string name)
 {
-	Zombie zb;
-	Zombie *test2;
+	Zombie test2(name);
 
-	test2 = zb.newZombie(name);
-	//test2->newZombie("hryuuta");
-	std::cout << "aaaa" << std::endl;
-	test2->announce();
-	std::cout << "b" << std::endl;
-	delete test2;
-	std::cout << "c" << std::endl;
+	test2.announce();
 }
