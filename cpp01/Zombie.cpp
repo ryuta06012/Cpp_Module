@@ -1,7 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/29 19:02:21 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/11/29 19:02:21 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "Zombie.hpp"
 
-Zombie::Zombie(): _ZombieName("42tokyo")
+Zombie::Zombie(std::string name): _ZombieName("")
 {
+	_ZombieName = name;
 	return ;
 }
 
