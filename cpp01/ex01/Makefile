@@ -1,7 +1,7 @@
 NAME := zombie
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -MMD -MP
-SRCS := main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS := main.cpp ZombieHorde.cpp Zombie.cpp
 HEADER := Zombie.hpp
 OBJS_DIR := obj/
 OBJS := $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
