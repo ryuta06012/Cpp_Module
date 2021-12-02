@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 19:15:50 by hryuuta           #+#    #+#             */
-/*   Updated: 2021/12/01 19:53:14 by hryuuta          ###   ########.fr       */
+/*   Created: 2021/12/01 14:49:16 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/12/02 15:47:47 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#include "HumanB.hpp"
 
-# include <string>
-# include <iostream>
-# include <cstdlib>
+HumanB::HumanB(std::string name): _name(name){}
 
-class Zombie
+HumanB::~HumanB(){}
+
+void	HumanB::setWeapon(Weapon &weapon)
 {
-	public:
-		Zombie();
-		~Zombie();
-		void	announce(void);
-		void	nameSet(std::string name);
-	private:
-		std::string _ZombieName;
-};
+	this->_weapon = &weapon;
+}
 
-Zombie *ZombieHorde( int N, std::string name);
-#endif
+void	HumanB::attack()
+{
+	std::cout << _name << " " << "attacks with his" << " " << this->_weapon->getType() << std::endl;
+}

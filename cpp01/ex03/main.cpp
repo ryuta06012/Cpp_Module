@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 19:15:50 by hryuuta           #+#    #+#             */
-/*   Updated: 2021/12/01 19:53:14 by hryuuta          ###   ########.fr       */
+/*   Created: 2021/12/01 16:00:41 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/12/02 15:53:14 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-# include <string>
-# include <iostream>
-# include <cstdlib>
-
-class Zombie
+void	test()
 {
-	public:
-		Zombie();
-		~Zombie();
-		void	announce(void);
-		void	nameSet(std::string name);
-	private:
-		std::string _ZombieName;
-};
+	Weapon weapon = Weapon("hand");
+	HumanA hryuuta = HumanA("hryuuta", "foot");
+	HumanB handa = HumanB("handa");
 
-Zombie *ZombieHorde( int N, std::string name);
-#endif
+	handa.setWeapon(weapon);
+
+	handa.attack();
+	hryuuta.attack();
+	
+	hryuuta.setType("hand");
+	weapon.setType("foot");
+	handa.attack();
+	hryuuta.attack();
+}
+
+int	main()
+{
+	test();
+	return (0);
+}

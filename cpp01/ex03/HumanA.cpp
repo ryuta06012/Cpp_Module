@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 19:15:50 by hryuuta           #+#    #+#             */
-/*   Updated: 2021/12/01 19:53:14 by hryuuta          ###   ########.fr       */
+/*   Created: 2021/12/01 16:09:27 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/12/02 15:31:53 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#include "HumanA.hpp"
 
-# include <string>
-# include <iostream>
-# include <cstdlib>
+HumanA::HumanA(std::string name, std::string weapon): _name(name), _weapon(weapon){}
 
-class Zombie
+HumanA::~HumanA(){}
+
+void	HumanA::attack()
 {
-	public:
-		Zombie();
-		~Zombie();
-		void	announce(void);
-		void	nameSet(std::string name);
-	private:
-		std::string _ZombieName;
-};
+	std::cout << _name << " " << "attacks with his" << " " << this->_weapon.getType() <<  std::endl;
+}
 
-Zombie *ZombieHorde( int N, std::string name);
-#endif
+void	HumanA::setType(std::string newType)
+{
+	this->_weapon.setType(newType);
+}
