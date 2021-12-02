@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 19:15:50 by hryuuta           #+#    #+#             */
-/*   Updated: 2021/11/30 16:08:22 by hryuuta          ###   ########.fr       */
+/*   Updated: 2021/12/01 19:53:14 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <string>
 # include <iostream>
-# include <string>
 # include <cstdlib>
 
 class Zombie
