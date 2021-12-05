@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 07:32:36 by hryuuta           #+#    #+#             */
-/*   Updated: 2021/12/05 04:07:02 by hryuuta          ###   ########.fr       */
+/*   Updated: 2021/12/06 03:52:26 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main(int ac, char **av) {
    	std::string line;
 	size_t		pos;
 
+	std::cout << av[2] << std::endl;
     if (inFile.fail())
 	{
         std::cerr << "File Open Error" << std::endl;
@@ -42,7 +43,7 @@ int main(int ac, char **av) {
 		std::cerr << "File Open Error" << std::endl;
         return (-1);
 	}
-    while (std::getline(inFile, line))
+    while (getline(inFile, line))
 	{
 			for (;;)
 			{
@@ -54,8 +55,8 @@ int main(int ac, char **av) {
 					line.erase(pos, checkStr.length());
 					line.insert(pos, replaceStr);
 				}
-			}
-            str += line + "\n";
+			}			
+				str += line + "\n";
     }
     newFile << str;
     return (0);
