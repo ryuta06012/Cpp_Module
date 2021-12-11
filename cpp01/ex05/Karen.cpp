@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 05:44:43 by hryuuta           #+#    #+#             */
-/*   Updated: 2021/12/11 16:55:57 by hryuuta          ###   ########.fr       */
+/*   Updated: 2021/12/12 04:14:50 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Karen::Karen()
 {
+	std::cout << "contrust" << std::endl;
 	f[0] = &Karen::_non;
 	f[1] = &Karen::_debug;
 	f[2] = &Karen::_error;
@@ -60,5 +61,4 @@ void	Karen::complain(std::string level)
 {
 	int i = ((level == "DEBUG") * 1) + ((level == "ERROR") * 2) + ((level == "INFO") * 3) + ((level == "WARNING") * 4);
 	(this->*f[i])();
-	std::cout << i << std::endl;
 }
