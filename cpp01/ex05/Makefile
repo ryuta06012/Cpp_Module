@@ -1,4 +1,4 @@
-NAME := zombie
+NAME := karen
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -MMD -MP
 SRCS := main.cpp Karen.cpp
