@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   test.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 17:02:28 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/01/17 13:55:26 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/01/17 10:41:11 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/01/18 16:25:34 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-#define FIXED_H
+#include <iostream>
+using namespace std;
 
-class Fixed
-{
-private:
-	int _rawBits;
+class Kitty {
 public:
-	Fixed();
-	Fixed(const Fixed &fixed);
-	~Fixed();
-};
+	char *str;
+	Kitty() { str = "Kitty on your lap\n"; }
+	Kitty(const Kitty &obj) { str = "Di Gi Gharat\n"; }
+} g_obj ;
 
-
-#endif
+int main() {
+	//Kitty obj = g_obj;
+	Kitty obj(g_obj);
+	//obj = g_obj;
+	cout << g_obj.str;
+	cout << obj.str;
+	return 0;
+}
