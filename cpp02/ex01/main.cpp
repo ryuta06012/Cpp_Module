@@ -6,11 +6,10 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 17:02:33 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/01/24 12:12:50 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/01/25 14:43:03 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
 
 int main( void )
