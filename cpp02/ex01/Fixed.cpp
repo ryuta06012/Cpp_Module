@@ -6,12 +6,11 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 17:02:21 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/01/24 16:21:27 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/01/25 14:40:51 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed(): _rawBits(0)
 {
@@ -22,13 +21,13 @@ Fixed::Fixed(): _rawBits(0)
 Fixed::Fixed(int n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_rowBits = n * (1 << _offset);
+	_rawBits = n * (1 << _setBit);
 }
 
 Fixed::Fixed(float n)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_rowBits = roundf(n * (1 << _offset));
+	_rawBits = roundf(n * (1 << _setBit));
 }
 
 Fixed::Fixed(const Fixed &fixed)
@@ -63,11 +62,19 @@ int Fixed::getRawBits(void) const
 
 int Fixed::toInt(void) const
 { 
-	return (_rowBits / (1 << _offset));
+	std::cout << "Int constructor called" << std::endl;
+	return (_rawBits / (1 << _setBit));
 }
 
 float Fixed::toFloat(void) const
 {
-	return (static_cast<float>(_rowBits)) / (1 << _offSet);
+	std::cout << "Float constructor called" << std::endl;
+	return (static_cast<float>(_rawBits)) / (1 << _setBit);
+}
+
+std::ostream& operator<<(std::ostream& os, Fixed& fixed)
+{
+    os << fixed.toFloat();
+    return os;
 }
 
