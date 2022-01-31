@@ -1,7 +1,7 @@
 NAME := a.out
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -MMD -MP
-SRCS := main.cpp ClapTrap.cpp
+SRCS := main.cpp ClapTrap.cpp ScavTrap.cpp
 HEADER := ClapTrap.hpp
 OBJS_DIR := obj/
 OBJS := $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
