@@ -6,12 +6,11 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 16:48:57 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/01/31 16:26:24 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/07 02:12:46 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
 	{
@@ -57,4 +56,15 @@ int main() {
 		b.takeDamage(20);
 	}
 	std::cout << CYN << "-----------FragTrap TEST END-----------" << NC << std::endl;
+	std::cout << CYN << "------------DiamondTrap TEST START-----------" << NC << std::endl;
+	{
+		DiamondTrap a("hryuuta");
+
+		a.whoAmI();
+		a.attack("ataaaaaack!!!");
+        a.takeDamage(80);
+        a.takeDamage(50);
+        a.beRepaired(30);
+	}
+	std::cout << CYN << "-----------DiamondTrap TEST END-----------" << NC << std::endl;
 }

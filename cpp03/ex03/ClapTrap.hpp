@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 16:50:02 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/01/31 14:33:53 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/07 01:21:28 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ public:
 	void attack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	std::string getName() const;
+	void setName(std::string name);
 };
 
 #endif
