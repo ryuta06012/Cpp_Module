@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 03:21:37 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 04:30:31 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/02/07 03:24:36 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/02/07 04:34:19 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
-Animal::Animal(): type("Animal") {
-	std::cout << "Animal Constructor clalled" << std::endl;
+Cat::Cat() {
+	type = "Cat";
+	std::cout << "Cat Constructor clalled" << std::endl;
 }
 
-Animal::~Animal() {
-	std::cout << "Animal destructor called" << std::endl;
+Cat::~Cat() {
+	std::cout << "Cat destructor called" << std::endl;
 }
 
-std::string	Animal::getType() const {return type;}
-
-void	Animal::makeSound() const{
-	std::cout << "make sound" << std::endl;
+void	Cat::makeSound() const{
+	std::cout << "nyao" << std::endl;
 }

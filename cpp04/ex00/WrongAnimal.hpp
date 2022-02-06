@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 03:21:37 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 04:30:31 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/02/07 03:25:02 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/02/07 05:18:18 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#ifndef WRONGANIMAL_H
+#define WRONGANIMAL_H
 
-Animal::Animal(): type("Animal") {
-	std::cout << "Animal Constructor clalled" << std::endl;
-}
+#include <iostream>
 
-Animal::~Animal() {
-	std::cout << "Animal destructor called" << std::endl;
-}
+class WrongAnimal
+{
+	protected:
+		std::string type;
+	public:
+		WrongAnimal();
+		~WrongAnimal();
+		virtual void makeSound();
+};
 
-std::string	Animal::getType() const {return type;}
-
-void	Animal::makeSound() const{
-	std::cout << "make sound" << std::endl;
-}
+#endif

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 03:21:37 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 04:30:31 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/02/07 03:24:50 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/02/07 04:34:29 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal(): type("Animal") {
-	std::cout << "Animal Constructor clalled" << std::endl;
+Dog::Dog() {
+	type = "Dog";
+	std::cout << "Dog Constructor clalled" << std::endl;
 }
 
-Animal::~Animal() {
-	std::cout << "Animal destructor called" << std::endl;
+Dog::~Dog() {
+	std::cout << "Dog destructor called" << std::endl;
 }
 
-std::string	Animal::getType() const {return type;}
-
-void	Animal::makeSound() const{
-	std::cout << "make sound" << std::endl;
+void	Dog::makeSound() const{
+	std::cout << "wanwan" << std::endl;
 }
