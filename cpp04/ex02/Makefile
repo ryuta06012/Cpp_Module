@@ -1,8 +1,9 @@
 NAME := a.out
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -Wshadow -Wno-shadow -MMD -MP
-SRCS := main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
-HEADER := ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+CXXFLAGS := -Wall -Wextra -Werror -MMD -MP
+#-Wshadow -Wno-shadow
+SRCS := main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+HEADER := Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 OBJS_DIR := obj/
 OBJS := $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 DEPS := $(OBJS:.o=.d)

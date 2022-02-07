@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 19:48:08 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 02:07:40 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/02/07 03:24:54 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/02/07 09:19:32 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#ifndef DOG_H
+#define DOG_H
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class ScavTrap : virtual public ClapTrap
+class Dog : public Animal
 {
 	private:
-		unsigned int _DF_HitPoints;
-		unsigned int _DF_EnergyPoints;
-		unsigned int _DF_AttackDamage;
+	Brain *brain;
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		void attack(std::string const & target);
-		unsigned int getHitPoints();
-		unsigned int getEnergyPoints();
-		unsigned int getAttackDamage();
-		void guardGate();
+		Dog();
+		~Dog();
+		void makeSound() const;
 };
 
 #endif

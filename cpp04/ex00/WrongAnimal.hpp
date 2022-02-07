@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 19:48:08 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 02:07:40 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/02/07 03:25:02 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/02/07 05:18:18 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#ifndef WRONGANIMAL_H
+#define WRONGANIMAL_H
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-class ScavTrap : virtual public ClapTrap
+class WrongAnimal
 {
-	private:
-		unsigned int _DF_HitPoints;
-		unsigned int _DF_EnergyPoints;
-		unsigned int _DF_AttackDamage;
+	protected:
+		std::string type;
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		void attack(std::string const & target);
-		unsigned int getHitPoints();
-		unsigned int getEnergyPoints();
-		unsigned int getAttackDamage();
-		void guardGate();
+		WrongAnimal();
+		~WrongAnimal();
+		virtual void makeSound();
 };
 
 #endif

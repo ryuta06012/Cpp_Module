@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 19:48:08 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 02:07:40 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/02/07 03:24:42 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/02/07 04:29:27 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#ifndef CAT_H
+#define CAT_H
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-class ScavTrap : virtual public ClapTrap
+class Cat : public Animal
 {
-	private:
-		unsigned int _DF_HitPoints;
-		unsigned int _DF_EnergyPoints;
-		unsigned int _DF_AttackDamage;
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		void attack(std::string const & target);
-		unsigned int getHitPoints();
-		unsigned int getEnergyPoints();
-		unsigned int getAttackDamage();
-		void guardGate();
+		Cat();
+		~Cat();
+		void makeSound() const;
 };
 
 #endif
