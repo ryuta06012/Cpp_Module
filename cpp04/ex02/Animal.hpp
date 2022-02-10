@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 03:22:54 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 09:18:41 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/07 15:09:49 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ class Animal
 		Animal();
 		virtual ~Animal();
 		std::string getType() const;
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 };
 #endif

@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 03:21:40 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 09:16:45 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/07 15:23:56 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int main() {
     {
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
+		//Animal b1;
 
+		//std::cout << b1.getType() << std::endl;
 		delete j;//should not create a leak
 		delete i;
 		system("leaks a.out");
@@ -26,7 +28,7 @@ int main() {
 	std::cout << CYN <<"----------TES1 END!---------" << NC << std::endl;
 	std::cout << CYN <<"----------TES2 START!---------" << NC << std::endl;
     {
-		Animal *test[10];
+		Animal* test[10];
 
 		for (int i = 0; i < 10; i++)
 		{
