@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 03:24:36 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/07 09:19:20 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/07 15:04:13 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ Cat::~Cat() {
 	delete brain;
 }
 
-void	Cat::makeSound() const{
+void	Cat::makeSound() const {
 	std::cout << "nyao" << std::endl;
 }
