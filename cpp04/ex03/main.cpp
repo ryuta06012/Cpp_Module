@@ -6,9 +6,16 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 06:04:45 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/09 06:10:19 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/12 11:28:35 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
 int main() {
 

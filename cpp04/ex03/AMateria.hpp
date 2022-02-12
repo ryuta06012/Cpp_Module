@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 16:40:41 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/09 07:56:58 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/12 11:29:56 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
+#define GRN "\e[0;32m"
+#define CYN "\e[0;36m"
+#define NC "\e[0m"
+#define RED "\e[0;31m"
+
+class ICharacter;
 
 class AMateria
 {
@@ -22,8 +28,10 @@ class AMateria
 		std::string _type;
 	public:
 		AMateria();
-		AMateria(std::string const & type);
-		~AMateria();
+		AMateria(std::string type);
+		virtual ~AMateria();
+		AMateria(AMateria const &other);
+		AMateria &operator=(AMateria const &other);
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
