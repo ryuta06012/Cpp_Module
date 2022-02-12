@@ -72,7 +72,7 @@ float Fixed::toFloat(void) const
 	return (static_cast<float>(_rawBits)) / (1 << _setBit);
 }
 
-std::ostream& operator<<(std::ostream& os, Fixed& fixed)
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
     os << fixed.toFloat();
     return os;

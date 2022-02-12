@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 06:06:49 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/12 12:13:05 by hryuuta          ###   ########.fr       */
+/*   Created: 2022/02/11 02:13:29 by hryuuta           #+#    #+#             */
+/*   Updated: 2022/02/12 12:13:53 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "MateriaSource.hpp"
 
-Character::Character() {
-	//std::cout << "Character Constructor called" << std::endl;
-	_name = "";
+MateriaSource::MateriaSource() {
+	//std::cout << "MateriaSource Constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
 
-Character::Character(std::string name) {
-	//std::cout << name <<" Character Constructor called" << std::endl;
-	_name = name;
-	for (int i = 0; i < 4; i++)
-		_inventory[i] = NULL;
-}
-
-Character::~Character()
-{
-	//std::cout << "Character Destructor called" << std::endl;
+MateriaSource::~MateriaSource() {
+	//std::cout << "MateriaSource Destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (_inventory[i] != NULL)
@@ -36,7 +27,8 @@ Character::~Character()
 	}
 }
 
-void	Character::equip(AMateria *m) {
+void	MateriaSource::learnMateria(AMateria *m)
+{
 	if (m != NULL)
 	{
 		for (int i = 0; i < 4; i++)
@@ -52,19 +44,11 @@ void	Character::equip(AMateria *m) {
 	}
 }
 
-void	Character::unequip(int idx) {
-	if (_inventory[idx] == NULL)
-		return ;
+AMateria *MateriaSource::createMateria(std::string const & type) {
+	for (int i = 0; i < 4; i++)
+	{
+		if (_inventory[i] != NULL && _inventory[i]->getType() == type)
+			return _inventory[i]->clone();
+	}
+	return 0;
 }
-
-std::string const &Character::getName() const {
-	return _name;
-}
-
-void	Character::use(int idx, ICharacter &target)
-{
-	if (_inventory[idx] != NULL && (idx >= 0 && idx <= 3))
-		_inventory[idx]->use(target);
-}
-
-

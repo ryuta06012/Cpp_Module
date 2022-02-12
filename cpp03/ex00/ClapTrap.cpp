@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:00:11 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/01/30 17:35:47 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/01/31 12:46:28 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,24 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &r) {
 }
 
 void ClapTrap::attack(std::string const & target) {
-	(void)_EnergyPoints;
 	std::cout << "ClapTrap " << this->_Name << " attack " << target << ", causing "
 	<< this->_AttackDamage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	(void)amount;
-	std::cout << "ClapTrap " << this->_Name << " take " 
-	<< this->_Hitpoints << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->_Name << " take ";
+	if (this->_Hitpoints < amount) {
+		this->_Hitpoints = 0;
+		std::cout << amount << " points of damage!" << std::endl;
+	}
+	else {
+		this->_Hitpoints -= amount;
+		std::cout << amount << " points of damage!" << std::endl;
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << this->_Name << " is repaired " 
 	<< amount << " points" << std::endl;
+	this->_Hitpoints += amount;
 }
