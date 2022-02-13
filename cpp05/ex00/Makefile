@@ -2,8 +2,8 @@ NAME := a.out
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -MMD -MP
 #-Wshadow -Wno-shadow
-SRCS := main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp 
-HEADER := AMateria.hpp Character.hpp Cure.hpp Ice.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp
+SRCS := main.cpp Bureaucrat.cpp
+HEADER := Bureaucrat.hpp
 OBJS_DIR := obj/
 OBJS := $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 DEPS := $(OBJS:.o=.d)
