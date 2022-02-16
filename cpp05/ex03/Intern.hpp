@@ -6,7 +6,7 @@
 /*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:39:07 by hryuuta           #+#    #+#             */
-/*   Updated: 2022/02/16 14:10:34 by hryuuta          ###   ########.fr       */
+/*   Updated: 2022/02/16 16:17:36 by hryuuta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@
 class Intern
 {
 private:
+	Form *ClassNon(const std::string &target);
 	Form *getPresidentialPardonForm(const std::string &target);
 	Form *getRobotomyRequestForm(const std::string &target);
 	Form *getShrubberyCreationForm(const std::string &target);
-	Form	(Intern::*f[3])(const std::string &target);
+	Form	*(Intern::*f[4])(const std::string &target);
 public:
 	Intern();
 	~Intern();
-	Form *makeForm(const std::string &type, const std::string &target):
+	Form *makeForm(const std::string &type, const std::string &target);
 };
 
 #endif
