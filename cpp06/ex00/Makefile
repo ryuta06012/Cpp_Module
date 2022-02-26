@@ -1,4 +1,4 @@
-NAME := a.out
+NAME := convert
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -MMD -MP
 #-Wshadow -Wno-shadow
@@ -24,6 +24,9 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+test:
+	bash ./test.sh | less > test.txt
 
 -include $(DEPS)
 
